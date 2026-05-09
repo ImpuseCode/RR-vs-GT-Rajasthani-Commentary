@@ -258,12 +258,21 @@ export default function App() {
              </button>
              
              <button
+                onClick={() => startMatch("RR_VS_GT")}
+                disabled={loading}
+                className="w-full border border-rajasthan-red/30 hover:bg-rajasthan-red/5 active:scale-[0.98] transition-all py-3 px-6 rounded-xl flex items-center justify-center gap-3 font-medium text-rajasthan-red text-sm disabled:opacity-50 disabled:pointer-events-none"
+             >
+                <Trophy size={16} />
+                RR vs GT: Marwari Special
+             </button>
+             
+             <button
                 onClick={() => startMatch("2008_FINAL")}
                 disabled={loading}
-                className="w-full border border-orange-200/20 hover:bg-orange-200/5 active:scale-[0.98] transition-all py-3 px-6 rounded-xl flex items-center justify-center gap-3 font-medium text-orange-200/60 text-sm disabled:opacity-50 disabled:pointer-events-none"
+                className="w-full border border-orange-200/10 hover:bg-orange-200/5 active:scale-[0.98] transition-all py-3 px-6 rounded-xl flex items-center justify-center gap-3 font-medium text-orange-200/40 text-sm disabled:opacity-50 disabled:pointer-events-none"
              >
                 <RotateCcw size={16} />
-                Load Static Legend Match
+                Load Classic 2008 Finals
              </button>
              
              {!matchStarted && (

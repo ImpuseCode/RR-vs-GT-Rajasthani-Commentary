@@ -33,12 +33,26 @@ export const STATIC_MATCHES: Record<string, MatchNarration> = {
       { over: 0, ball: 5, event: 'double', runs: 2, isWicket: false, commentary: "Do ran ki daud! Tezi se bhaage dono batsman." },
       { over: 0, ball: 6, event: 'six', runs: 6, isWicket: false, commentary: "Sikkas! Aasman mein ball... tharo dhyan kidhar hai, ball boundary ke paar hai!" }
     ]
+  },
+  "RR_VS_GT": {
+    teamA: "Rajasthan Royals",
+    teamB: "Gujarat Titans",
+    venue: "Sawai Mansingh Stadium, Jaipur",
+    summary: "Royal challenge vs Titan power! Pink City is buzzing with Marwari energy.",
+    overs: [
+      { over: 0, ball: 1, event: 'dot', runs: 0, isWicket: false, commentary: "Khamma Ghani sa! Pehli ball aur khatarnak bouncer! Batsman ne jhuk kar izzat di." },
+      { over: 0, ball: 2, event: 'four', runs: 4, isWicket: false, commentary: "Are baap re! Kaain baat hai bhaaya, gajab ko shot maaryo hai! Seedho boundary ke paar chauko!" },
+      { over: 0, ball: 3, event: 'dot', runs: 0, isWicket: false, commentary: "Abke baali sunni gayi sa. Koni mile run, fielders ekdum mustail khadya hai." },
+      { over: 0, ball: 4, event: 'six', runs: 6, isWicket: false, commentary: "Oh ho ho! Yo lyo! Ball seedhi taaran mein! Aasman se baataan kar rahi hai ball, gajab ko sikkas!" },
+      { over: 0, ball: 5, event: 'single', runs: 1, isWicket: false, commentary: "Halke haath se khelya aur tezi se ek run chura liyo. Score aage badhyo sa." },
+      { over: 0, ball: 6, event: 'wicket', runs: 0, isWicket: true, commentary: "Out! Phelio danda ukhaad diyo! Bowler ne kamaal kar diyo, batsman ghar jaavan taiyar!" }
+    ]
   }
 };
 
 export async function generateCommentary(matchType: string = "fictional T20"): Promise<MatchNarration> {
-  if (matchType === "2008_FINAL") {
-    return new Promise((resolve) => setTimeout(() => resolve(STATIC_MATCHES["2008_FINAL"]), 500));
+  if (STATIC_MATCHES[matchType]) {
+    return new Promise((resolve) => setTimeout(() => resolve(STATIC_MATCHES[matchType]), 500));
   }
   
   const prompt = `Generate a ${matchType} sequence for a cricket match (5 overs).
