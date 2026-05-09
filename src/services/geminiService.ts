@@ -1,6 +1,14 @@
 import { GoogleGenAI, Type } from "@google/genai";
 
-const ai = new GoogleGenAI({ apiKey: process.env.GEMINI_API_KEY });
+const getApiKey = () => {
+  const key = import.meta.env.VITE_GEMINI_API_KEY || process.env.GEMINI_API_KEY;
+  if (!key) {
+    console.warn("GEMINI_API_KEY is missing. AI commentary will not work.");
+  }
+  return key || "";
+};
+
+const ai = new GoogleGenAI({ apiKey: getApiKey() });
 
 export interface CommentaryBall {
   over: number;
