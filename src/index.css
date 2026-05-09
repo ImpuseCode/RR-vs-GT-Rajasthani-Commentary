@@ -1,0 +1,38 @@
+@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,400&family=JetBrains+Mono&display=swap');
+
+@theme {
+  --font-sans: 'Space Grotesk', ui-sans-serif, system-ui, sans-serif;
+  --font-decorative: 'Cormorant Garamond', serif;
+  --font-mono: 'JetBrains Mono', monospace;
+
+  --color-saffron: #FF9933;
+  --color-gold: #FFD700;
+  --color-ochre: #CC7722;
+  --color-clay: #D2691E;
+  --color-terracotta: #E2725B;
+  --color-sand: #F5DEB3;
+  --color-rajasthan-red: #E31B23; /* Vibrant Post Office Red */
+  --color-royal-yellow: #FFD700;
+  --color-desert-night: #1A0F05;
+}
+
+body {
+  @apply bg-desert-night text-orange-50/90 font-sans antialiased selection:bg-rajasthan-red selection:text-white;
+}
+
+.rajasthan-gradient {
+  background: linear-gradient(135deg, #E31B23 0%, #FF9933 100%);
+}
+
+.commentary-scroll::-webkit-scrollbar {
+  width: 4px;
+}
+
+.commentary-scroll::-webkit-scrollbar-track {
+  @apply bg-zinc-900;
+}
+
+.commentary-scroll::-webkit-scrollbar-thumb {
+  @apply bg-clay rounded-full;
+}
